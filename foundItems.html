@@ -1,0 +1,16 @@
+<h3></h3>
+<table>
+  <tr ng-if="fi_ctrl.found && fi_ctrl.found.length != 0">
+    <th>Name</th>
+    <th>Short Name</th>
+    <th>Description</th>
+    <th>Action</th>
+  <tr>
+  <tr ng-repeat = "eachItem in fi_ctrl.found">
+    <td>{{eachItem.name}}</td>
+    <td>{{eachItem.short_name}}</td>
+    <td>{{eachItem.description}}</td>
+    <td><button ng-click = "fi_ctrl.onRemove({pos: $index})">Don't want this one!</button></td>
+  <tr>
+</table>
+<div class="error" ng-if="fi_ctrl.found.length == 0">Nothing found</div>
